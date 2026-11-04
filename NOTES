@@ -1,0 +1,6 @@
+-> There are mainly 8 locators in selenium to find the element in a web page= ID, Name, ClassName, LinkText, PartialLinkText, TagName, XPath,
+CSS Selector
+-> object.findElemnet(By.____());
+-> There are 6 basic controls in html, textbox, link, Button, Radio Button, CheckBox, DropDown
+-> If we wanna test Textboxes in a web using webdriver we will get by using web elements.
+->
