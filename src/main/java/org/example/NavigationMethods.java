@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class NavigationMethods {
     public static void main(String[] args) throws InterruptedException {
-        WebDriver navg=  new ChromeDriver();
+        WebDriver navg = new ChromeDriver();
         navg.get("https://www.google.com/");
         Thread.sleep(2000);
         navg.findElement(By.name("q")).sendKeys("election");

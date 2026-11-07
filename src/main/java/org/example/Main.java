@@ -10,7 +10,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        WebDriver wb= new ChromeDriver();
+        WebDriver wb = new ChromeDriver();
         //WebDriver me = new EdgeDriver();
         //Till Selenium 4.6 we need to use separate Driver.executable for each web page
         // after 4.6, it is auto implemented using Selenium manager
@@ -28,7 +28,6 @@ public class Main {
 
         wb.quit();
         //me.get("https://www.google.com/");
-
 
 
     }

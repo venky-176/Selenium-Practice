@@ -8,18 +8,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 //In these program we will practice how to handle links, radio buttons and checkboxes using selenium webdriver?
 
 public class ButtonManagement {
-    public static void main(String[] args) throws Exception{
-        WebDriver but= new ChromeDriver();
+    public static void main(String[] args) throws Exception {
+        WebDriver but = new ChromeDriver();
         but.get("https://www.hyrtutorials.com/p/basic-controls.html");
         Thread.sleep(3000);
         but.findElement(By.id("femalerb")).click();
         Thread.sleep(3000);
         but.findElement(By.id("englishchbx")).click();
         Thread.sleep(3000);
-        WebElement chink= but.findElement(By.id("chinesechbx"));
+        WebElement chink = but.findElement(By.id("chinesechbx"));
         chink.click();// checks
         Thread.sleep(3000);
-        if(chink.isSelected()){
+        if (chink.isSelected()) {
             chink.click();
         }
         Thread.sleep(3000);

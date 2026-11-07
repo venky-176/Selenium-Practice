@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AlertBoxes {
-    public static void main(String[] args) throws InterruptedException{
-        WebDriver alert= new ChromeDriver();
+    public static void main(String[] args) throws InterruptedException {
+        WebDriver alert = new ChromeDriver();
         alert.get("https://www.hyrtutorials.com/p/alertsdemo.html");
         Thread.sleep(1000);
         // Alert box
