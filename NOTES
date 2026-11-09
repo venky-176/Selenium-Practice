@@ -3,4 +3,29 @@ CSS Selector
 -> object.findElemnet(By.____());
 -> There are 6 basic controls in html, textbox, link, Button, Radio Button, CheckBox, DropDown
 -> If we wanna test Textboxes in a web using webdriver we will get by using web elements.
-->
+
+******************************************X-PATH**********************************************
+
+-> XPath(XML path language) is a query language for selecting nodes from an XML doc or finding element in HTML web page.
+-> Xpath is a dynamic locator in Selenium to find elements.
+
+
+ -- Types of XPath
+ -> Absolute XPath- Starts from root element of the document. starts with single '/'
+ -> Relative XPath- starts from any point in the document. starts with double '//' (Recommended)
+
+XPath using Attributes
+ =>XPath using attributes by Relative Path- //tagName[@attribute = 'value']
+ -> tag-name- input, button, div, span....etc
+ -> AttributeName- type, id, name, class, value...etc
+
+ XPath Operators (=, !=, <,<=,>, >= etc) used for elements having similar fields with different signatures.
+
+ XPath Conditions mainly consists of "and", "or", "not".
+
+ XPath Index
+
+XPath Functions= XPath provides some predefined functions to find elements mainly 6
+-> Text, Normalize-space, Contains, Last, starts-With, Position
+->  //tagName[text()='value'] syntax
+-> //tagName[contains(text(),'value')] syntax
