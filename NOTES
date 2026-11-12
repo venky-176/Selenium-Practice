@@ -29,3 +29,19 @@ XPath Functions= XPath provides some predefined functions to find elements mainl
 -> Text, Normalize-space, Contains, Last, starts-With, Position
 ->  //tagName[text()='value'] syntax
 -> //tagName[contains(text(),'value')] syntax
+
+ XPath Axes these are all DOM modifiers for XPath in html
+ Ancestor-> ancestor, ancestor-or-self
+ Descendant-> Descendant, Descendant-or-self
+ Sibling-> preceding-Sibling, following-Sibling
+ parent-> parent
+ Child-> child
+ Syntax:- //tagname[@Attribute=value]/modifier::tagname[@Attribute=value]
+
+
+ XPath Shortcuts/ Abbreviations
+
+-> [text()=='']==> [.='']   we can use '.' for text
+
+-> child::==> / we can use '/' in place of child
+-> parent:: ==> /.. we uses .. after / for parent

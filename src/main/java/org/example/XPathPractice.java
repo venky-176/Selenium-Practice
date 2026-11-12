@@ -10,18 +10,19 @@ import java.util.*;
 
 public class XPathPractice {
     public static WebDriver driver = new ChromeDriver();
+    public static JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         driver.manage().window().maximize();
         //Atribute();
         //operator();
         //conditons();
         //indexes();
-        functions();
+        //functions();
+        axes();
     }
 
     public static void highlight(WebElement element) {
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
     }
 
@@ -65,7 +66,46 @@ public class XPathPractice {
         highlight(driver.findElement(By.xpath("//a[contains(text(),'in into')]")));// usually the original text is Sign into account
         highlight(driver.findElement(By.xpath("//div[contains(@class ,'signin')]")));// here we used attribute for finding an element
         highlight(driver.findElement(By.xpath("//a[starts-with(text(),'Sign in ')]")));// starts with function
+        highlight(driver.findElement(By.xpath("//label[normalize-space(text())='First Name']")));
+        highlight(driver.findElement(By.xpath("(//table[@id='contactList']/tbody/tr)[last()]")));
+    }
 
+    //XPATH Axes Modifiers
+    static void axes() throws InterruptedException {
+        driver.get("https://www.hyrtutorials.com/p/add-padding-to-containers.html");
 
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        jsExecutor.executeScript(
+                "let div = document.querySelector('.container');" +
+                        "let node = [...div.childNodes].find(n => " +
+                        "n.nodeType === Node.TEXT_NODE && n.textContent.includes('Please fill in'));" +
+                        "let span = document.createElement('span');" +
+                        "span.textContent = node.textContent;" +
+                        "span.style.backgroundColor = 'yellow';" +
+                        "span.style.border = '2px solid red';" +
+                        "node.parentNode.replaceChild(span, node);"
+        );
+
+        Thread.sleep(5000);
+
+        driver.findElement(By.xpath("//label[text()='First Name ']/following-sibling:: input[@maxlength=10]")).sendKeys("Venkat");
+        Thread.sleep(3000);
+        highlight(driver.findElement(By.xpath("//label[text()='First Name ']/preceding-sibling::a[contains(text(),'in into')]")));
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//button[text()='Reset']/preceding-sibling::button[@type='submit']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//td[text()='Maria Anders']/preceding-sibling::td/child::input")).click();
+        Thread.sleep(3000);
+        highlight(driver.findElement(By.xpath("//td[text()='Roland Mendel']/parent::tr")));
+        Thread.sleep(3000);
+        highlight(driver.findElement(By.xpath("//label[text()='Password']/parent::*/parent::*//label")));
+        Thread.sleep(3000);
+        highlight(driver.findElement(By.xpath("//label[text()='Password']/parent::div/parent::div/label[3]")));
+        Thread.sleep(3000);
+        highlight(driver.findElement(By.xpath("//div[@id='post-body-299858861183690484']/descendant::div[3]/child::label")));
+        Thread.sleep(3000);
+        highlight(driver.findElement(By.xpath("//button[text()='Clear']/following::table/child::tbody/child::tr[6]")));
+        Thread.sleep(1000);
     }
 }
