@@ -45,3 +45,22 @@ XPath Functions= XPath provides some predefined functions to find elements mainl
 
 -> child::==> / we can use '/' in place of child
 -> parent:: ==> /.. we uses .. after / for parent
+
+
+
+**************************************************** TEST-NG **************************************************************************
+
+-> TestNg is a testing framework which is used for unit, end-to-end, functional, integration testing.
+
+-> @Test => used to test the methods
+
+-> testNg.xml file is a configuration file which contains test execution details like the flow of execution of tests, how the tests work.
+
+-> Assertion is an expression which will verify the actual outcome with the expected test outcome.
+-> assertEquals= checks whether 2 texts , numbers data are equal or not vise versa is assertNotEquals
+-> assertTrue, assertFalse, assertNull, assertNotNull
+
+-> Hard Assertion is an assertion which throws the exception immediately upon failure of assertion. It will break out of the tests w/o executing the remaining statements. moves to next tests=> comes from Assert class
+-> Soft assertion will give control of throwing and stopping of execution unlike hard exception.=> comes from softAssert class
+
+-> Annotation is a form of metadata that can be added to the java source code.
